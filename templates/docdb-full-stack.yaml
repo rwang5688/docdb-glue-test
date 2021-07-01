@@ -9,6 +9,7 @@ Parameters:
     MaxLength: "16"
     AllowedPattern: "[a-zA-Z][a-zA-Z0-9]*"
     ConstraintDescription : "Must begin with a letter and contain only alphanumeric characters."
+    Default: "docdbadmin"
 
   DBAdminUserPassword:
     NoEcho: "true"
@@ -18,15 +19,16 @@ Parameters:
     MaxLength: "41"
     AllowedPattern : "[a-zA-Z0-9]+"
     ConstraintDescription : "must contain only alphanumeric characters."
+    Default: "iamdocdbadmin"
 
   DBClusterName: 
-    Default: "MyCluster"
     Description : "Cluster name"
     Type: "String"
     MinLength: "1"
     MaxLength: "64"
     AllowedPattern : "[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*"
     ConstraintDescription : "Must begin with a letter and contain only alphanumeric characters."
+    Default: "docdb-cluster"
 
   DBInstanceClass:
     Description : "Instance class. Please refer to: https://docs.aws.amazon.com/documentdb/latest/developerguide/db-instance-classes.html#db-instance-classes-by-region"
@@ -39,7 +41,8 @@ Parameters:
       - db.r5.4xlarge
       - db.r5.12xlarge
       - db.r5.24xlarge                             
-    ConstraintDescription : "Instance type must be of the ones supported for the region. Please refer to: https://docs.aws.amazon.com/documentdb/latest/developerguide/db-instance-classes.html#db-instance-classes-by-region"  
+    ConstraintDescription : "Instance type must be of the ones supported for the region. Please refer to: https://docs.aws.amazon.com/documentdb/latest/developerguide/db-instance-classes.html#db-instance-classes-by-region"
+    Default: "db.t3.medium"
 
   DBInstanceName: 
     Default: "MyInstance"
@@ -49,6 +52,7 @@ Parameters:
     MaxLength: "64"
     AllowedPattern : "[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*"
     ConstraintDescription : "Must begin with a letter and contain only alphanumeric characters."
+    Default: "docdb-instance"
 
 Resources:
   DBCluster:
