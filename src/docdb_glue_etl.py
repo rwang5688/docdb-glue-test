@@ -16,9 +16,9 @@ spark = glueContext.spark_session
 job = Job(glueContext)
 job.init(args['JOB_NAME'], args)
 
-output_path = "s3://wangrob-docdb-glue-test-output-us-east-1/jobs/" + str(time.time()) + "/"
 docdb_read_uri = "mongodb://docdb-instance.cht1ctqm99mr.us-east-1.docdb.amazonaws.com:27017"
 docdb_write_uri = "mongodb://docdb-instance.cht1ctqm99mr.us-east-1.docdb.amazonaws.com:27017"
+output_path = "s3://wangrob-docdb-glue-test-output-us-east-1/jobs/" + str(time.time()) + "/"
 
 read_docdb_options = {
     "uri": docdb_read_uri,
